@@ -1,28 +1,55 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div v-if="login == true">
+      <home></home>
+    </div>
+    <div v-else>
+      <login></login>
+    </div>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import home from "./components/Home";
+import login from "./components/Login";
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    home,
+    login,
+  },
+  data() {
+    return {
+      login: false,
+    };
+  },
+  methods: {},
+  mounted() {
+    console.log(this.$settings);
+    if (JSON.parse(localStorage.getItem("dataLogin")) !== null) {
+      let dataLogin = JSON.parse(localStorage.getItem("dataLogin"));
+      if (
+        this.$idPengguna == dataLogin.id &&
+        this.$idOutlet == dataLogin.idOutlet
+      ) {
+        this.login = true;
+      }
+    }
+  },
+};
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url(assets/minimal.css);
+
+.modal {
+  display: block;
+}
+
+.hide {
+  display: none;
+  transition: height 1s ease;
+}
+
+.show {
+  display: block;
+  transition: height 1s ease;
 }
 </style>

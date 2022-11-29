@@ -1,0 +1,19 @@
+{
+    "elements": {},
+    "attributes": {
+        ":value": {
+            "context": "input"
+        },
+        "v-if": {},
+        "v-model.number": {
+            "context": "input"
+        },
+        "v-on:click": {
+            "context": "button"
+        },
+        "v-for": {
+            "context": "option"
+        },
+        "v-model": {}
+    }
+}

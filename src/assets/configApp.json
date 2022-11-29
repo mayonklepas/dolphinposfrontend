@@ -1,0 +1,8 @@
+{
+    "alasanKoreksi":[
+        {"name":"gelang","value":"Pembuatan Gelang dengan kode gelang : "},
+        {"name":"kalung","value":"Pembuatan Kalung dengan kode kalung : "},
+        {"name":"cincin","value":"Pembuatan Cincin dengan kode cincin : "},
+        {"name":"anting","value":"Pembuatan Anting dengan kode anting : "}
+    ]
+}
